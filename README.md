@@ -10,13 +10,13 @@ The solution follows a clean architecture pattern with clear separation of conce
 
 ```
 CapitalGains/
-??? Domain/              # Core business logic and entities
-?   ??? Position.cs      # Position tracking with weighted average price
-?   ??? Operation.cs     # Operation model with JSON serialization
-?   ??? TaxResult.cs     # Tax calculation result model
-??? Application/         # Application services
-?   ??? CapitalGainsService.cs  # Main business logic orchestration
-??? Program.cs          # CLI interface and JSON I/O handling
+ Domain/              # Core business logic and entities
+    Position.cs      # Position tracking with weighted average price
+    Operation.cs     # Operation model with JSON serialization
+    TaxResult.cs     # Tax calculation result model
+ Application/         # Application services
+    CapitalGainsService.cs  # Main business logic orchestration
+ Program.cs          # CLI interface and JSON I/O handling
 ```
 
 ### Key Design Principles
@@ -174,6 +174,6 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ```
 CapitalGains.Tests/
-??? Unit/                    # Unit tests for business logic
-    ??? CapitalGainsServiceTests.cs  # Service layer tests (10 tests)
+ Unit/                    # Unit tests for business logic
+     CapitalGainsServiceTests.cs  # Service layer tests (10 tests)
 ```
