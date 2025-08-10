@@ -23,7 +23,7 @@ while (!string.IsNullOrEmpty(line = Console.ReadLine()))
             Console.WriteLine(output);
         }
     }
-    catch (JsonException ex)
+    catch (JsonException)
     {
         continue;
     }

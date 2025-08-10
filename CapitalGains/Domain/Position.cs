@@ -24,7 +24,6 @@ public class Position
         WeightedAveragePrice = (totalCurrentValue + totalBoughtValue) / newTotalQuantity;
         Quantity = newTotalQuantity;
         
-        // Round to 2 decimal places as specified
         WeightedAveragePrice = Math.Round(WeightedAveragePrice, 2, MidpointRounding.AwayFromZero);
     }
 
@@ -42,7 +41,6 @@ public class Position
 
         if (isExempt)
         {
-            // Exempt operations don't generate tax and don't consume accumulated losses
             if (profitOrLoss < 0)
             {
                 AccumulatedLoss += Math.Abs(profitOrLoss);
@@ -52,12 +50,10 @@ public class Position
 
         if (profitOrLoss <= 0)
         {
-            // Loss operation - accumulate the loss
             AccumulatedLoss += Math.Abs(profitOrLoss);
             return 0;
         }
 
-        // Profit operation - check if we can offset with accumulated losses
         var taxableProfit = profitOrLoss;
         if (AccumulatedLoss > 0)
         {
